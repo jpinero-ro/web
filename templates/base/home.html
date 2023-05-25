@@ -1,0 +1,74 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="{% static 'img/logo/logo.ico' %}"/>
+    <!--CSS-->
+    <link rel="stylesheet" href="{% static 'lib/bootstrap-3.3.7/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'lib/font-awesome-4.7.0/css/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" href="{% static "lib/jquery-ui-1.12.1/jquery-ui.css" %}"/>
+    <!--JS-->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static "lib/jquery-ui-1.12.1/jquery-ui.min.js" %}"></script>
+    <script src="{% static 'lib/bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+    <!--Template-->
+    <link rel="stylesheet" href="{% static 'lib/adminlte-2.4.10/ionicons.css' %}"/>
+    <link rel="stylesheet" href="{% static 'lib/adminlte-2.4.10/adminLTE.css' %}"/>
+    <link rel="stylesheet" href="{% static 'lib/adminlte-2.4.10/_all-skins.min.css' %}"/>
+    <!--Stilos-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <!--Libs-->
+    <script src="{% static "lib/sweetalert2-8.2.4/sweetalert2.all.min.js" %}"></script>
+    <link rel="stylesheet" href="{% static 'lib/sweetalert2-8.2.4/sweetalert2.css' %}"/>
+    <script src="{% static "js/functions.js" %}"></script>
+    <!--Block CSS & JS-->
+    {% block head %}
+
+    {% endblock %}
+</head>
+{% block body %}
+    <body class="hold-transition skin-blue layout-top-nav">
+    <div class="wrapper">
+        <!--Header-->
+        {% include 'base/header.html' %}
+        <!--End Header-->
+        <div class="content-wrapper" style="min-height: 788.2px;">
+            <!--Block content-->
+            <div class="container">
+                <section class="content-header">
+                    <h1>
+                        Bienvenido
+                        <small>{{ user.username }}</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Panel</a></li>
+                        <li>
+                            {% block breadcrumb %}
+
+                            {% endblock %}
+                        </li>
+                    </ol>
+                </section>
+                {% block content %}
+
+                {% endblock %}
+            </div>
+            <!--End block content-->
+        </div>
+        <!--Footer-->
+        {% include 'base/footer.html' %}
+        <!--End Footer-->
+    </div>
+    <!--Block Jquery-->
+    {% block jquery %}
+
+    {% endblock %}
+    <!--End block jquery-->
+    </body>
+{% endblock %}
+</html>

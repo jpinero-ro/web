@@ -1,0 +1,35 @@
+.login-box-body {
+    border-radius: 3px;
+    margin-top: 30px;
+}
+
+.login-details {
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.login-details a {
+    cursor: pointer;
+}
+
+.contact-image {
+    text-align: center;
+}
+
+.contact-image i {
+    border-radius: 6rem;
+    margin-top: -35%;
+    background-color: white;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .login-box, .register-box {
+        width: 90%;
+        margin-top: 80px;
+    }
+}
+
